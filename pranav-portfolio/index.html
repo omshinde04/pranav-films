@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranav Kadam - Professional Video Editor</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <header>
+        <nav>
+    <ul class="nav-list">
+        <li>HOME</li>
+        <li>ABOUT</li>
+        <li>WORK</li>
+        <li>CONTACT US</li>
+    </ul>
+</nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-image">
+            <!-- <img src="cover page.png" alt="Pranav Kadam Hero Image"> -->
+        </div>
+    </section>
+<!-- about section -->
+    <section class="about">
+        <h2>ABOUT ME</h2>
+        <p class="about-desc">Freelance Video Editor | Motion Graphics Enthusiast</p>
+        <p class="about-text">With 6 Months Of Experience In Video Editing, I Have Worked With CapCut And Premiere Pro To Craft Engaging And High-Quality Content. Currently Expanding My Expertise In After Effects To Enhance Motion Design And Visual Storytelling. Passionate About Creating Seamless Edits, Dynamic Transitions, And Visually Compelling Narratives That Captivate Audiences.</p>
+        <p class="about-text">I Specialize In Short-Form Content, Promotional Videos, And Social Media Edits, Ensuring A Perfect Balance Of Creativity And Technical Precision. Constantly Learning And Evolving, I Strive To Push Creative Boundaries And Deliver Impactful Visuals That Leave A Lasting Impression.</p>
+        <div class="skills">
+            <div class="skill-item">Video Editing</div>
+            <div class="skill-item">Reels Editing</div>
+            <div class="skill-item">Commercial Video</div>
+            <div class="skill-item">Cinematic Edit</div>
+        </div>
+    </section>
+
+
+    <!-- my edits section -->
+    <section class="edits">
+        <h2>MY BEST EDITS</h2>
+        <div class="edit-grid">
+            <div class="edit-item">
+                <video controls>
+                    <source src="videos/LukeRaw.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                
+            </div>
+            <div class="edit-item">
+                <video controls>
+                    <source src="videos/podcast.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="edit-item">
+                <video controls>
+                    <source src="videos/offroad.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="edit-item">
+                <video controls>
+                    <source src="videos/cinematic.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </section>
+    <!-- contact section  -->
+    <section class="contact">
+        <h2 style="color: white;">I AM READY TO CONSULT YOU</h2>
+        <div class="contact-container">
+            <div class="contact-left">
+                <p>Get in Touch</p>
+                <h3>Connect with me</h3>
+                <p>Connect with Email</p>
+                <p>pranavkadamfilms@gmail.com</p>
+                <!-- <div class="contact-line"></div> -->
+                <p style="color: white;">Connect with Call</p>
+                <p style="color: red;">+917887363197</p>
+                <!-- <div class="contact-line"></div> -->
+                <a href="https://www.instagram.com/pranav_k0387?igsh=eWtubGhvZWs5bHA2" target="_blank">
+                    Follow me on Instagram
+                </a>
+                
+              </div>
+
+                <!-- contact right  -->
+            <div class="contact-right">
+                <form action="submit-form.php" method="POST" class="contact-form">
+                    <div id="success-message" style="display: none; color: green; font-weight: bold;">
+                        Message sent successfully!
+                    </div>
+                
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Please enter your name" required>
+                
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="user@gmail.com" required>
+                
+                    <div class="phone-container">
+                        <label for="phone">Phone</label>
+                        <div class="phone-inputs">
+                            <input type="text" value="+91" readonly>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone no" required>
+                        </div>
+                    </div>
+                
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Write your message here" required></textarea>
+                
+                    <button type="submit">Send Message</button>
+                </form>
+                
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="left-content">
+                <p>developed by ViOm Tech</p>
+            </div>
+            <div class="right-content">
+                <p>COPYRIGHT@2025 ALL RIGHTS RESERVED</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+    // Mobile Navigation Toggle
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector("nav ul");
+
+    if (hamburger && navMenu) {
+        hamburger.addEventListener("click", function () {
+            navMenu.classList.toggle("active");
+        });
+
+        document.querySelectorAll("nav ul li").forEach((item) => {
+            item.addEventListener("click", () => {
+                navMenu.classList.remove("active");
+            });
+        });
+    }
+    
+
+    // Contact Form Submission with AJAX
+    document.addEventListener("DOMContentLoaded", function () {
+        const contactForm = document.querySelector(".contact-form");
+
+        // Create success message container
+        const successMessage = document.createElement("div");
+        successMessage.id = "success-message";
+        successMessage.style.display = "none";
+        successMessage.style.color = "green";
+        successMessage.style.fontWeight = "bold";
+        successMessage.style.marginTop = "10px";
+        contactForm.appendChild(successMessage); // Add it to the form
+
+        contactForm.addEventListener("submit", function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            const formData = new FormData(contactForm);
+
+            fetch("submit-form.php", {
+                method: "POST",
+                body: formData
+            })
+            .then(response => response.text()) // Read response as text
+            .then(data => {
+                successMessage.textContent = "Message sent successfully!";
+                successMessage.style.display = "block"; // Show success message
+                contactForm.reset(); // Clear form after submission
+                
+                // Hide success message after 3 seconds
+                setTimeout(() => {
+                    successMessage.style.display = "none";
+                }, 3000);
+            })
+            .catch(error => {
+                console.error("Error submitting form:", error);
+                successMessage.textContent = "Something went wrong. Please try again.";
+                successMessage.style.color = "red";
+                successMessage.style.display = "block";
+            });
+        });
+    });
+
+        
+    </script>
+    </body>
+</html>

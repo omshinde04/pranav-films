@@ -1,0 +1,405 @@
+body {
+    font-family: 'Unbounded', cursive;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: #333;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    padding: 15px 10px;
+    text-align: right;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 20px 0;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li {
+    display: inline;
+    cursor: pointer;
+    color: white;
+    font-size: 1.1em;
+}
+
+/* Hamburger Menu for Mobile */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    z-index: 1000;
+}
+
+.hamburger div {
+    width: 35px;
+    height: 4px;
+    background-color: white; /* Set to white */
+    margin: 6px 0;
+    transition: 0.4s;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.8);
+}
+
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    nav {
+        justify-content: space-between;
+        padding: 15px 20px;
+        position: relative;
+    }
+
+    .hamburger {
+        display: flex;
+        font-size: 24px;
+        cursor: pointer;
+        color: white;
+    }
+
+    nav ul {
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        flex-direction: column;
+        text-align: center;
+        padding: 10px 0;
+        transition: all 0.3s ease-in-out;
+        
+        /* Smooth hide effect */
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-10px);
+    }
+
+    nav ul.active {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    nav ul li {
+        padding: 12px;
+        font-size: 1.2em;
+        color: white;
+    }
+}
+
+
+
+/* Hero Section */
+.hero {
+    background: url('cover page.png') no-repeat center center/cover;
+    min-height: 611px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 1.2em;
+}
+
+.hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* About Section */
+.about {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.about h2, .about .about-desc, .about .about-text {
+    color: white;
+}
+
+.about .about-text {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: #828282;
+}
+
+/* Skills Section */
+.skills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.skill-item {
+    background-color: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    color: white;
+}
+
+/* Edits Section */
+.edits {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.edits h2 {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: white;
+}
+
+/* Videos in a horizontal grid for desktop */
+.edit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Videos in a vertical stack for mobile */
+@media (max-width: 768px) {
+    .edit-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .edit-item {
+        width: 100%; /* Make videos take full width on mobile */
+    }
+}
+
+.edit-item {
+    background-color: #333;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.edit-item video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Contact Section */
+.contact {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1145px;
+    margin: 0 auto;
+}
+
+.contact-left, .contact-right {
+    flex: 1;
+    min-width: 300px;
+    margin-bottom: 20px;
+}
+
+.contact-left h3 {
+    color: #2E2F30;
+    font-size: 30px;
+    font-weight: 300;
+}
+
+.contact-left p {
+    color: #ccc;
+    font-weight: 300;
+}
+
+.contact-left p:first-child {
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.contact-left p:nth-child(4),
+.contact-left p:nth-child(6) {
+    color: red;
+}
+
+.contact-left .contact-line {
+    border-bottom: 1px solid #9370DB;
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #E1306C; /* Instagram pink */
+    font-family: 'Poppins', sans-serif;
+    display: inline-block;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover {
+    color: white;
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+    padding: 8px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+}
+
+/* contact left finish here  */
+.contact-right label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ccc;
+    font-weight: 300;
+}
+
+.contact-right input,
+.contact-right textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #9370DB;
+    background-color: transparent;
+    color: #ccc;
+    font-weight: 300;
+    box-sizing: border-box;
+}
+
+.contact-right textarea {
+    resize: vertical;
+}
+
+.phone-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.phone-inputs {
+    display: flex;
+}
+
+.phone-inputs input[type="text"] {
+    width: 50px;
+    margin-right: 10px;
+    background-color: transparent;
+    color: #ccc;
+    border: 1px solid #9370DB;
+}
+
+.contact-right button {
+    background: linear-gradient(to right, purple, blue);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 159px;
+    height: 56px;
+    margin-top: 20px;
+}
+
+/* Footer */
+.footer {
+    background-color: black;
+    color: #ccc;
+    padding: 20px 0;
+    border-top: 1px solid #555;
+}
+
+.footer-content {
+    max-width: 1145px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer p {
+    font-size: 14px;
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-list {
+        text-align: center;
+    }
+    
+    .hero {
+        background: url('phone.png') no-repeat center center/cover;
+    }
+
+    .edit-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    /* header */
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-right {
+        margin-left: 0;
+        margin-top: 30px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+}
